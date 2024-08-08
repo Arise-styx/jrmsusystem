@@ -143,7 +143,10 @@ Route::controller(ReportController::class)->middleware(['auth'])->group(function
     ->group(function () {
 
         Route::get('/studentdashboard', 'studentdashboard')->name('studentdashboard');
+
         Route::get('/studentdashboard/studentsemester', 'studentsemester')->name('studentsemester');
+
+        Route::get('/studentreport', 'studentreport')->name('studentreport');
 
 
 

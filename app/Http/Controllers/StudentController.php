@@ -37,4 +37,11 @@ class StudentController extends Controller
 
         return view('backend.studentmanagement.studentsemesterinfo', compact('name', 'imageUrl'));
     }
+
+    public function studentreport()
+    {
+        $name = "Admin Page";
+
+        return view('backend.studentmanagement.studentreports', compact('name'));
+    }
 }
