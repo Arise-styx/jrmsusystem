@@ -168,12 +168,12 @@
                                 <div class="col-md-6 text-container">
                                     <div class="form-inline">
                                         <label for="student_id" class="col-form-label">Student ID</label>
-                                        <input class="form-control" name="student_id" id="student_id" type="text"
-                                            required>
+                                        <input class="form-control" name="students_id" id="students_id" type="text"
+                                        readonly>
                                     </div>
                                     <div class="form-inline">
                                         <label for="fullname" class="col-form-label">Complete Full Name</label>
-                                        <input class="form-control" name="fullname" id="fullname" type="text" required>
+                                        <input class="form-control" name="fullname" id="fullname" type="text" readonly>
                                     </div>
 
                                     <div class="form-inline">
@@ -185,45 +185,45 @@
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason4" class="col-form-label">Home Address</label>
-                                        <input class="form-control" name="reason4" id="reason4" type="text" required>
+                                        <input class="form-control" name="address" id="address" type="text" required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">Personal Contact Number</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text" required>
+                                        <input class="form-control" name="contact" id="contact" type="text" required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">Email/Gmail</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text" required>
+                                        <input class="form-control" name="email" id="email" type="text" required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">What Sports Had You Play In?</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text" required>
+                                        <input class="form-control" name="sports" id="sports" type="text" required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">What Technological Skills Are You
                                             Known To Specialize In?</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text" required>
+                                        <input class="form-control" name="techskill" id="techskill" type="text" required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">What Is Your Parent's or Guardian's
                                             FullName?</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                        <input class="form-control" name="guardian" id="guardian" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">Parent/Guardian Relationship</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                        <input class="form-control" name="guardianrelation" id="guardianrelation" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">Parent/Guardian Contact
                                             Number</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                        <input class="form-control" name="guardiannum" id="guardiannum" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">Address</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                        <input class="form-control" name="guardianaddress" id="guardianaddress" type="text"
                                             required>
                                     </div>
                                 </div>
@@ -246,59 +246,59 @@
                                     <div class="form-inline">
                                         <label for="reason1" class="col-form-label">What is the Name of the Elementary
                                             School Where you Attend?</label>
-                                        <input class="form-control" name="reason1" id="reason1" type="text"
+                                        <input class="form-control" name="elemschool" id="elemschool" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason2" class="col-form-label">Have you Received any Highest Awards?
                                         </label>
-                                        <input class="form-control" name="reason2" id="reason2" type="text"
+                                        <input class="form-control" name="award" id="award" type="text"
                                             required>
                                         <label for="reason3" class="col-form-label">Year Graduated</label>
-                                        <input class="form-control" name="reason3" id="reason3" type="text"
+                                        <input class="form-control" name="yrgraduate" id="yrgraduate" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason3" class="col-form-label">What is the name of the junior high
                                             school where you attend?</label>
-                                        <input class="form-control" name="reason3" id="reason3" type="text"
+                                        <input class="form-control" name="juniorhigh" id="juniorhigh" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason2" class="col-form-label">Have you Received any Highest Awards?
                                         </label>
-                                        <input class="form-control" name="reason2" id="reason2" type="text"
+                                        <input class="form-control" name="juniorhighaward" id="juniorhighaward" type="text"
                                             required>
                                         <label for="reason3" class="col-form-label">Year Graduated</label>
-                                        <input class="form-control" name="reason3" id="reason3" type="text"
+                                        <input class="form-control" name="juniorhighgraduatedyear" id="juniorhighgraduatedyear" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason3" class="col-form-label">What is the senior high school name
                                             of your institution?</label>
-                                        <input class="form-control" name="reason3" id="reason3" type="text"
+                                        <input class="form-control" name="seniorhigh" id="seniorhigh" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason2" class="col-form-label">Have you Received any Highest Awards?
                                         </label>
-                                        <input class="form-control" name="reason2" id="reason2" type="text"
+                                        <input class="form-control" name="seniorhighaward" id="seniorhighaward" type="text"
                                             required>
                                         <label for="reason3" class="col-form-label">Year Graduated</label>
-                                        <input class="form-control" name="reason3" id="reason3" type="text"
+                                        <input class="form-control" name="seniorhighgradyear" id="seniorhighgradyear" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason4" class="col-form-label">Academic Track</label>
-                                        <input class="form-control" name="reason4" id="reason4" type="text"
+                                        <input class="form-control" name="academictrack" id="academictrack" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">TESDA Assessment?</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                        <input class="form-control" name="tesdaAsses" id="tesdaAsses" type="text"
                                             required>
                                         <label for="reason5" class="col-form-label">Year Graduated</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                        <input class="form-control" name="yrGraduated" id="yrGraduated" type="text"
                                             required>
                                     </div>
                                 </div>
@@ -322,21 +322,21 @@
                                     <div class="form-inline">
                                         <label for="reason1" class="col-form-label">What are Courses Did you Select from
                                             the Portal?</label>
-                                        <input class="form-control" name="reason1" id="reason1" type="text"
+                                        <input class="form-control" name="courseselected" id="courseselected" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason2" class="col-form-label">General Average on your Report Card?
                                         </label>
-                                        <input class="form-control" name="reason2" id="reason2" type="text"
+                                        <input class="form-control" name="genAve" id="genAve" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason3" class="col-form-label">Admissions Test?</label>
-                                        <input class="form-control" name="reason3" id="reason3" type="text"
+                                        <input class="form-control" name="Admissiontest" id="Admissiontest" type="text"
                                             required>
                                         <label for="reason3" class="col-form-label">Interview Rating?</label>
-                                        <input class="form-control" name="reason3" id="reason3" type="text"
+                                        <input class="form-control" name="interviewRating" id="interviewRating" type="text"
                                             required>
                                     </div>
                                 </div>
@@ -360,21 +360,21 @@
                                     <div class="form-inline">
                                         <label for="reason1" class="col-form-label">Who is your landlord/landlady
                                             (complete name)?</label>
-                                        <input class="form-control" name="reason1" id="reason1" type="text"
+                                        <input class="form-control" name="bhowner" id="bhowner" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason2" class="col-form-label">What is the name of your boarding
                                             house?
                                         </label>
-                                        <input class="form-control" name="reason2" id="reason2" type="text"
+                                        <input class="form-control" name="bhname" id="bhname" type="text"
                                             required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason2" class="col-form-label">What is the address of your Boarding
                                             House?
                                         </label>
-                                        <input class="form-control" name="reason2" id="reason2" type="text"
+                                        <input class="form-control" name="bhaddress" id="bhaddress" type="text"
                                             required>
                                     </div>
                                 </div>
@@ -438,6 +438,16 @@
                                     $('#fullname').val(ui.item.full_name);
                                     $('#datebirth').val(ui.item.date_of_birth);
                                     $('#gender').val(ui.item.gender);
+                                    $('#students_id').val(ui.item.students_id);
+                                    $('#gender').val(ui.item.students_id);
+                                    $('#students_id').val(ui.item.students_id);
+                                    $('#students_id').val(ui.item.students_id);
+                                    $('#students_id').val(ui.item.students_id);
+                                    $('#students_id').val(ui.item.students_id);
+                                    $('#students_id').val(ui.item.students_id);
+                                    $('#students_id').val(ui.item.students_id);
+
+
                                 }
                             });
                         });
@@ -456,6 +466,7 @@
                                             document.getElementById('fullname').value = data.full_name || '';
                                             document.getElementById('datebirth').value = data.date_of_birth || '';
                                             document.getElementById('gender').value = data.gender || '';
+                                            document.getElementById('students_id').value = data.students_id || '';
                                         }
                                     })
                                     .catch(error => console.error('Error fetching student details:', error));

@@ -37,14 +37,32 @@ class StudentController extends Controller
 
         if ($student) {
             return response()->json([
-                'student_id' => $student->student_id,
+                'students_id' => $student->student_id,
                 'full_name' => $student->full_Name,
                 'date_of_birth' => $student->date_of_Birth,
                 'gender' => $student->gender,
-                'full_name' => $student->full_Name,
-                'full_name' => $student->full_Name,
-                'date_of_birth' => $student->date_of_Birth,
-                'gender' => $student->gender
+                'full_name' => $student->home_address,
+                'full_name' => $student->contact_num,
+                'date_of_birth' => $student->email_add,
+                'gender' => $student->sports,
+                'gender' => $student->tech_skills,
+                'gender' => $student->languages_prof,
+                'gender' => $student->guardian_full_name,
+                'gender' => $student->guardian_rel,
+                'gender' => $student->guardian_contact_num,
+                'gender' => $student->address,
+                'gender' => $student->elem_School,
+                'gender' => $student->e_Highest_Award,
+                'gender' => $student->e_Yr_Graduated,
+                'gender' => $student->junior_High_School,
+                'gender' => $student->j_highest_Award,
+                'gender' => $student->j_Yr_Graduated,
+                'gender' => $student->senior_High_School,
+                'gender' => $student->s_Highest_award,
+                'gender' => $student->s_Yr_Graduated,
+                'gender' => $student->landlord,
+                'gender' => $student->name_Bh,
+                'gender' => $student->add_Bh,
             ]);
         } else {
             return response()->json([]);
