@@ -138,13 +138,18 @@ Route::controller(ReportController::class)->middleware(['auth'])->group(function
 //     Route::get('/pdfviewpage', 'pdfviewpage')->name('pdfviewpage');
 // });
 
-    Route::middleware(['auth', 'verified'])
+Route::middleware(['auth', 'verified'])
     ->controller(StudentController::class)
     ->group(function () {
 
         Route::get('/studentdashboard', 'studentdashboard')->name('studentdashboard');
+
         Route::get('/studentdashboard/studentsemester', 'studentsemester')->name('studentsemester');
 
+        Route::get('/studentreport', 'studentreport')->name('studentreport');
 
+        Route::get('/fetch-student-fullname', [StudentController::class, 'fetchStudentFullName'])->name('fetchStudentFullName');
+        Route::get('/fetch-student-details/{studentId}', [StudentController::class, 'fetchStudentDetails'])->name('fetchStudentDetails');
 
     });
+

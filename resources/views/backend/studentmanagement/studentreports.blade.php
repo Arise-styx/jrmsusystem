@@ -5,9 +5,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-
 
         <style>
             .search-container {
@@ -38,8 +35,8 @@
         </style>
         <style>
             /* .container {
-                                                                                                                align-items: center;
-                                                                                                            } */
+                                                                                    align-items: center;
+                                                                                } */
             .image-container {
                 flex: 1;
                 /* This will allow the image container to take up 1/4 of the line */
@@ -115,7 +112,36 @@
             }
         </style>
 
-
+        <!-- Alerts -->
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @elseif (session('updated'))
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <strong>{{ session('updated') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @elseif(session('removed'))
+            <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                <strong>{{ session('removed') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @elseif(session('deleted'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ session('deleted') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
 
         @if ($errors->any())
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -134,13 +160,7 @@
         <div class="row">
             <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                 <div class="search-container">
-                    <select id="studentDropdown" class="form-control" onchange="fetchStudentDetails()">
-                        <option value="">Select Student ID</option>
-                        @foreach ($students as $student)
-                            <option value="{{ $student->student_id }}">{{ $student->student_id }}</option>
-                        @endforeach
-                    </select>
-
+                    <input type="text" id="search-input" class="search-input" placeholder="Search Student ID">
                 </div>
             </div>
         </div>
@@ -159,29 +179,25 @@
                         <div class="container mt-4">
                             <div class="row">
                                 <div class="col-md-3 image-container">
-                                    <img src="{{ $imageUrl }}" alt="Your Image" class="img-fluid">
-                                    <a href="{{ route('studentsemester') }}">View Semester
-                                        Info</a>
+                                    <img alt="Your Image" class="img-fluid">
+                                    <a href="{{ route('studentsemester') }}" class="btn custom-btn mt-3">View Semester Info</a>
                                 </div>
 
 
                                 <div class="col-md-6 text-container">
                                     <div class="form-inline">
-                                        <label for="student_id" class="col-form-label">Student ID</label>
-                                        <input class="form-control" name="student_id" id="student_id" type="text"
-                                            required>
+                                        <label for="reason1" class="col-form-label">Student ID Number</label>
+                                        <input class="form-control" name="reason1" id="reason1" type="text" required>
                                     </div>
                                     <div class="form-inline">
-                                        <label for="fullname" class="col-form-label">Complete Full Name</label>
-                                        <input class="form-control" name="fullname" id="fullname" type="text" required>
+                                        <label for="reason2" class="col-form-label">Complete Full Name</label>
+                                        <input class="form-control" name="reason2" id="reason2" type="text" required>
                                     </div>
-
                                     <div class="form-inline">
-                                        <label for="datebirth" class="col-form-label">Date of Birth</label>
-                                        <input class="form-control" name="datebirth" id="datebirth" type="text" readonly>
-
-                                        <label for="gender" class="col-form-label">Gender</label>
-                                        <input class="form-control" name="gender" id="gender" type="text" readonly>
+                                        <label for="reason3" class="col-form-label">Date of Birth</label>
+                                        <input class="form-control" name="reason3" id="reason3" type="text" required>
+                                        <label for="reason3" class="col-form-label">Gender</label>
+                                        <input class="form-control" name="reason3" id="reason3" type="text" required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason4" class="col-form-label">Home Address</label>
@@ -189,20 +205,24 @@
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">Personal Contact Number</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text" required>
+                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                            required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">Email/Gmail</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text" required>
+                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                            required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">What Sports Had You Play In?</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text" required>
+                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                            required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">What Technological Skills Are You
                                             Known To Specialize In?</label>
-                                        <input class="form-control" name="reason5" id="reason5" type="text" required>
+                                        <input class="form-control" name="reason5" id="reason5" type="text"
+                                            required>
                                     </div>
                                     <div class="form-inline">
                                         <label for="reason5" class="col-form-label">What Is Your Parent's or Guardian's
@@ -385,26 +405,18 @@
                     <hr class="horizontal dark">
                     <hr class="horizontal dark">
 
-                    {{-- <div class="table-responsive">
+                    <div class="table-responsive">
                         <div class="container mt-4">
                             <div class="row">
-
                                 <div class="col-md-6 text-container">
-                                    <div class="form-inline">
-                                        <div class="row">
-                                            <div class="col-auto">
-                                                <button type="button" class="btn btn-primary me-3">Your Button</button>
-                                            </div>
-                                            <div class="col-auto">
-                                                <button type="button" class="btn btn-primary">Your Button</button>
-                                            </div>
-                                        </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="button" class="btn btn-primary">Add</button>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
+
 
                     <div class="row mt-4">
 
@@ -412,58 +424,5 @@
 
 
                     </div>
-
-                    <script>
-                        $(function() {
-                            // Set up the autocomplete
-                            $('#student_id').autocomplete({
-                                source: function(request, response) {
-                                    $.ajax({
-                                        url: '{{ route('fetchStudentFullName') }}',
-                                        type: 'POST',
-                                        data: {
-                                            student_ID_Number: request.term,
-                                            _token: $('meta[name="csrf-token"]').attr('content') // CSRF token
-                                        },
-                                        success: function(data) {
-                                            response(data);
-                                        },
-                                        error: function(xhr, status, error) {
-                                            console.log("Error:", error); // Log error for debugging
-                                        }
-                                    });
-                                },
-                                minLength: 2,
-                                select: function(event, ui) {
-                                    $('#fullname').val(ui.item.full_name);
-                                    $('#datebirth').val(ui.item.date_of_birth);
-                                    $('#gender').val(ui.item.gender);
-                                }
-                            });
-                        });
-                    </script>
-
-                    <script>
-                        function fetchStudentDetails() {
-                            const studentId = document.getElementById('studentDropdown').value;
-                            if (studentId) {
-                                const url = `{{ route('fetchStudentDetails', ':studentId') }}`.replace(':studentId', studentId);
-                                fetch(url)
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        console.log('AJAX Response:', data); // Add this line to debug
-                                        if (data) {
-                                            document.getElementById('fullname').value = data.full_name || '';
-                                            document.getElementById('datebirth').value = data.date_of_birth || '';
-                                            document.getElementById('gender').value = data.gender || '';
-                                        }
-                                    })
-                                    .catch(error => console.error('Error fetching student details:', error));
-                            }
-                        }
-                    </script>
-
-
-
                 </div>
             @endsection('maincontent')

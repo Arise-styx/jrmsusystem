@@ -35,8 +35,8 @@
         </style>
         <style>
             /* .container {
-                                                                                                    align-items: center;
-                                                                                                } */
+                                                                                                        align-items: center;
+                                                                                                    } */
             .image-container {
                 flex: 1;
                 /* This will allow the image container to take up 1/4 of the line */
@@ -156,7 +156,8 @@
                         </div>
                         <!-- Button container -->
                         <div class="position-absolute bottom-0 end-0 p-3">
-                            <button type="button" class="btn btn-primary">Your Button</button>
+                            <a href="{{ route('studentreport') }}" class="btn btn-primary">Your Button</a>
+
                         </div>
                     </div>
                 </div>
